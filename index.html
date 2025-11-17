@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delphi | Oracle for Taste and Culture</title>
+  <style>
+    /* Base */
+    html,body{margin:0;background:#fff;color:#111;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+    html{scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:#fff;border-bottom:1px solid #ddd;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 60px
+    }
+    header h1{
+      margin:0;font-family:"Times New Roman",serif;
+      font-weight:400;letter-spacing:.5px;font-size:28px
+    }
+
+    /* Nav + Tooltip */
+    nav{position:relative;display:flex;align-items:center;gap:30px;font-size:14px;cursor:default}
+    .nav-group{display:flex;gap:30px;align-items:center;position:relative}
+    .nav-group:hover .tt{display:block}
+    .tt{
+      position:absolute;left:50%;top:140%;transform:translateX(-50%);
+      min-width:260px;max-width:520px;padding:14px 16px;border:1px solid #111;background:#fff;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      display:none;z-index:1001;
+      font-family:"Times New Roman",serif;font-weight:400;letter-spacing:.5px;
+      font-size:16px;line-height:1.45;color:#111
+    }
+    .tt:before{
+      content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+      border-width:0 8px 8px 8px;border-style:solid;border-color:transparent transparent #111 transparent;
+    }
+    .tt:after{
+      content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+      border-width:0 7px 7px 7px;border-style:solid;border-color:transparent transparent #fff transparent;
+    }
+
+    .cta-btn{
+      padding:10px 20px;border:1px solid #111;background:transparent;
+      cursor:pointer;font-size:14px;
+      transition:background .3s,color .3s
+    }
+    .cta-btn:hover{background:#111;color:#fff}
+
+    /* Layout */
+    .section{text-align:center;padding:20px 20px}
+    .section h2{
+      font-family:"Times New Roman",serif;
+      font-size:32px;margin-bottom:12px;font-weight:700
+    }
+
+    /* Subheading under About */
+    .section-subtitle{
+      font-size:18px;
+      color:#000000;
+      margin-bottom:40px;
+    }
+
+    /* HERO */
+    .hero-with-bg{
+      position:relative;
+      min-height:40vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fffbfb;
+      padding:80px 20px;
+      background:
+  url("images/ocean_03\ copy.jpeg")
+  center/cover no-repeat;
+    }
+    .hero-with-bg h2{
+      font-size:56px;font-family:"Times New Roman",serif;
+      font-weight:400;margin:0 0 12px
+    }
+    .hero-with-bg p{
+      font-size:18px;max-width:740px;margin:6px auto 0;color:#ffffff
+    }
+
+    /* Feature Image + About */
+    #about-split{padding:20px 0}
+    .split{
+      max-width:1200px;margin:0 auto;padding:0 20px;
+      display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;
+    }
+    .split .image-box{
+      width:100%;aspect-ratio:3/2;border:1px solid #eee;
+      background:#f3f4f6;overflow:hidden;
+    }
+    .split .image-box img{
+      width:100%;height:100%;object-fit:cover;display:block
+    }
+    .about-copy p{
+      margin:0;font-size:16px;line-height:1.6;color:#111
+    }
+    .about-copy p:first-letter{
+      float:left;font-family:"Times New Roman",serif;font-weight:700;
+      font-size:110px;line-height:.85;
+      letter-spacing:-2px;padding-right:14px;padding-top:6px;
+      margin-top:-4px;color:#111
+    }
+
+    /* Footer */
+    .footer{
+      text-align:center;padding:40px;font-size:14px;
+      border-top:1px solid #ddd;color:#666
+    }
+
+    /* Beta form */
+    #beta-form{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    input[type="text"],input[type="email"],input[type="tel"]{
+      margin:10px 0;
+      padding:12px;
+      border:1px solid #111;
+      font-size:14px;
+      max-width:400px;
+      width:100%;
+    }
+    input::placeholder{
+      font-size:12px;
+      color:#777;
+    }
+    #beta-message{
+      font-size:13px;color:#666;margin-top:10px;min-height:18px
+    }
+
+    @media (max-width: 800px){
+      header{padding:16px 20px}
+      .split{grid-template-columns:1fr;gap:24px}
+      .hero-with-bg{padding:60px 16px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Delphi</h1>
+    <nav aria-label="Primary">
+      <div class="nav-group">
+        <span>Oracle</span>
+        <span>Editorial</span>
+        <span>Collective+</span>
+        <span class="tt">
+          <strong style="display:block; font-weight:700; margin-bottom:8px;">Note From the Editor</strong>
+          We begin at a golden gate veiled in silver fog — San Francisco. Here our curators have embodied California coastal chic,
+          lingered at iconic locales, and been the beating heart behind our selection of refined discoveries. I hope Delphi makes you feel the way the best cities do: curious, excited, and a little more in love with life.
+        </span>
+      </div>
+    </nav>
+
+    <button class="cta-btn" onclick="document.getElementById('beta').scrollIntoView({behavior:'smooth'})">
+      Join Circle
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-with-bg" aria-label="Your Oracle for Taste and Culture">
+    <div>
+      <h2>Your Oracle for Taste and Culture</h2>
+      <p>No lists, no reviews. Just the right recommendation, right away.</p>
+      <p>Next Generation Discovery. Curated. Collective. Intelligent.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT DELPHI -->
+  <section class="section" id="about">
+    <h2><strong>ABOUT DELPHI</strong></h2>
+    <p class="section-subtitle">Delphi is invitation only.</p>
+  </section>
+
+  <!-- Feature Image + About -->
+  <section id="about-split" aria-label="Feature image and About Delphi">
+    <div class="split">
+      <div class="image-box">
+        <!-- You can keep this local image path or swap for a hosted image -->
+        <img src="images/phone_01 copy.jpeg" alt="Delphi feature image">
+      </div>
+      <div class="about-copy" id="editorial">
+        <p>
+          A new way to discover where to go and what to do — one that speaks your language, understands your taste, and saves you time.
+          You ask. Delphi answers — with recommendations that are clear, chic, and correct. From the most worthwhile dining to cultural
+          lifestyle insights that elevate the everyday, Delphi delivers the esteemed with speed. If you value taste, trust, and time —
+          we invite you to join the first circle for access to The Oracle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beta -->
+  <section class="section" id="beta">
+    <h2>Join Circle</h2>
+    <p>Limited access for our first collective.</p>
+    <form id="beta-form">
+      <input type="text" name="name" placeholder="name" required>
+      <input
+        type="email"
+        name="email"
+        placeholder="email *we'll only email you when worth opening"
+        required
+      >
+      <input
+        type="tel"
+        name="zip"
+        inputmode="numeric"
+        pattern="\d{5}"
+        maxlength="5"
+        placeholder="zip code *currently available in select cities"
+        aria-label="ZIP Code"
+        required
+      >
+      <button class="cta-btn" type="submit">Reserve Your Spot</button>
+      <p id="beta-message"></p>
+    </form>
+  </section>
+
+  <div class="footer">Delphi © 2025 — Oracle Meets Editor</div>
+
+  <!-- Supabase signup script -->
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    
+    const SUPABASE_URL = 'https://cidkxiclczieyofktfer.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpZGt4aWNsY3ppZXlvZmt0ZmVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzMjM4NzEsImV4cCI6MjA3ODg5OTg3MX0.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const form = document.getElementById('beta-form');
+    const messageEl = document.getElementById('beta-message');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      messageEl.textContent = 'Submitting…';
+
+      const formData = new FormData(form);
+      const name = (formData.get('name') || '').toString().trim();
+      const email = (formData.get('email') || '').toString().trim();
+      const zip = (formData.get('zip') || '').toString().trim();
+
+      if (!email) {
+        messageEl.textContent = 'Please enter a valid email.';
+        return;
+      }
+
+      try {
+        const { error } = await supabase
+          .from('waitlist_signups')   
+          .insert([{ name, email, zip }]); // created_at is handled in the DB
+
+        if (error) {
+          console.error(error);
+          messageEl.textContent = 'Something went wrong. Please try again in a moment.';
+          return;
+        }
+
+        messageEl.textContent = "You're on the list. We'll email your access code ahead of the private release.";
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        messageEl.textContent = 'Network issue. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
