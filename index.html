@@ -13,79 +13,123 @@
     /* Header */
     header{
       position:sticky;top:0;z-index:1000;
-      background:#fff;border-bottom:1px solid #ddd;
+      background:#fff;
       display:flex;align-items:center;justify-content:space-between;
-      padding:20px 60px
+      padding:34px 60px;
     }
     header h1{
       margin:0;font-family:"Times New Roman",serif;
-      font-weight:400;letter-spacing:.5px;font-size:28px
+      font-weight:400;letter-spacing:.5px;font-size:40px;
     }
 
-    /* Nav + Tooltip */
-    nav{position:relative;display:flex;align-items:center;gap:30px;font-size:14px;cursor:default}
-    .nav-group{display:flex;gap:30px;align-items:center;position:relative}
-    .nav-group:hover .tt{display:block}
-    .tt{
-      position:absolute;left:50%;top:140%;transform:translateX(-50%);
-      min-width:260px;max-width:520px;padding:14px 16px;border:1px solid #111;background:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,.08);
-      display:none;z-index:1001;
-      font-family:"Times New Roman",serif;font-weight:400;letter-spacing:.5px;
-      font-size:16px;line-height:1.45;color:#111
+    .header-right{display:flex;align-items:center;gap:18px;position:relative}
+
+    /* Buttons */
+    .cta-btn,
+    .login-btn{
+      border:1px solid #111;
+      background:transparent;
+      cursor:pointer;
+      color:#000;
+      font-family:"Times New Roman",serif;
+      text-decoration:none;
+      transition:background .2s,color .2s;
+      white-space:nowrap;
     }
-    .tt:before{
-      content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);
-      border-width:0 8px 8px 8px;border-style:solid;border-color:transparent transparent #111 transparent;
-    }
-    .tt:after{
-      content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);
-      border-width:0 7px 7px 7px;border-style:solid;border-color:transparent transparent #fff transparent;
+    .cta-btn:hover,
+    .login-btn:hover{background:#111;color:#fff}
+
+    /* Reserve button: make it feel intentional */
+    .cta-btn{
+      padding:12px 22px;
+      font-size:15px;
+      border-radius:999px;
     }
 
-.cta-btn{
-  padding:10px 20px;
-  border:1px solid #111;
-  background:transparent;
-  cursor:pointer;
-  font-size:14px;
-  color:#000;                     /* force black text */
-  font-family:"Times New Roman",serif;
-  text-decoration:none;
-  transition:background .3s,color .3s;
-}
-.cta-btn:hover{
-  background:#111;
-  color:#fff;
-}
+    /* Login button stays crisp */
+    .login-btn{
+      padding:10px 14px;
+      font-size:14px;
+      border-radius:0;
+    }
 
-    /* Layout */
-    .section{text-align:center;padding:20px 20px}
+    /* Login popover */
+    .login-pop{
+      position:absolute;
+      right:0;
+      top:calc(100% + 14px);
+      width:320px;
+      padding:16px;
+      border:1px solid #111;
+      background:#fff;
+      box-shadow:0 12px 30px rgba(0,0,0,.12);
+      display:none;
+      z-index:2000;
+      text-align:left;
+    }
+    .login-pop.open{display:block}
+    .login-pop h3{
+      margin:0 0 10px;
+      font-family:"Times New Roman",serif;
+      font-weight:700;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .login-pop p{
+      margin:0 0 12px;
+      font-size:12px;
+      color:#555;
+      line-height:1.4;
+    }
+    .login-row{display:flex;gap:10px;align-items:center}
+    .login-row input{
+      flex:1;
+      padding:10px 10px;
+      border:1px solid #111;
+      font-size:13px;
+    }
+    .login-row button{
+      padding:10px 12px;
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      cursor:pointer;
+      font-size:13px;
+      font-family:"Times New Roman",serif;
+    }
+    .login-row button:hover{opacity:.9}
+    .login-msg{margin-top:10px;font-size:12px;color:#666;min-height:16px}
+    .login-close{
+      position:absolute;top:10px;right:10px;
+      border:none;background:transparent;cursor:pointer;
+      font-size:16px;line-height:1;color:#111;
+    }
+
+    /* Sections: tighten default spacing globally */
+    .section{ text-align:center; padding:28px 20px; }
     .section h2{
       font-family:"Times New Roman",serif;
-      font-size:32px;margin-bottom:12px;font-weight:700
+      font-size:32px;margin:0 0 10px;font-weight:700
     }
 
-    /* Subheading under About */
     .section-subtitle{
       font-size:18px;
       color:#000000;
-      margin-bottom:40px;
+      margin:0 0 18px; /* tighter */
     }
 
-    /* HERO */
+    /* HERO (desktop crop already good) */
     .hero-with-bg{
       position:relative;
-      min-height:40vh;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       color:#fffbfb;
-      padding:80px 20px;
+      padding:80px 20px 52px; /* slightly tighter bottom */
       background:
-  url("images/ocean_03\ copy.jpeg")
-  center/cover no-repeat;
+        url("images/ocean_03 copy.jpeg")
+        center/cover no-repeat;
     }
     .hero-with-bg h2{
       font-size:56px;font-family:"Times New Roman",serif;
@@ -96,7 +140,7 @@
     }
 
     /* Feature Image + About */
-    #about-split{padding:20px 0}
+    #about-split{padding:12px 0 28px} /* tighter */
     .split{
       max-width:1200px;margin:0 auto;padding:0 20px;
       display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;
@@ -118,24 +162,20 @@
       margin-top:-4px;color:#111
     }
 
-    /* Footer */
-    .footer{
-      text-align:center;padding:40px;font-size:14px;
-      border-top:1px solid #ddd;color:#666
-    }
-
-    /* Beta form */
+    /* Beta form: tighten gaps */
     #beta-form{
       display:flex;
       flex-direction:column;
       align-items:center;
+      gap:10px;              /* KEY: remove huge whitespace */
+      margin-top:16px;
     }
     input[type="text"],input[type="email"],input[type="tel"]{
-      margin:10px 0;
-      padding:12px;
+      margin:0;              /* KEY: remove per-input margins */
+      padding:14px;
       border:1px solid #111;
       font-size:14px;
-      max-width:400px;
+      max-width:560px;
       width:100%;
     }
     input::placeholder{
@@ -143,37 +183,74 @@
       color:#777;
     }
     #beta-message{
-      font-size:13px;color:#666;margin-top:10px;min-height:18px
+      font-size:13px;color:#666;margin-top:6px;min-height:18px
+    }
+
+    /* Footer */
+    .footer{
+      text-align:center;
+      padding:34px 20px;
+      border-top:1px solid #ddd;
+      color:#666;
+      font-size:14px;
+    }
+    .footer-note{
+      margin:0 0 10px;
+      font-size:12px;
+      color:#777;
+      line-height:1.4;
     }
 
     @media (max-width: 800px){
-      header{padding:16px 20px}
-      .split{grid-template-columns:1fr;gap:24px}
-      .hero-with-bg{padding:60px 16px}
-    }
+      header{padding:20px 18px}
+      header h1{font-size:34px}
 
+      /* Mobile hero: HARD crop */
+      .hero-with-bg{
+        padding:52px 16px 18px;       /* KEY: very tight bottom */
+        background-position:center center;
+      }
+      .hero-with-bg h2{font-size:44px}
+      .hero-with-bg p{font-size:16px}
+
+      /* Button bigger on mobile */
+      .cta-btn{
+        width:min(560px, 100%);
+        padding:14px 22px;
+        font-size:16px;
+      }
+
+      .split{grid-template-columns:1fr;gap:20px}
+      .login-pop{width:min(320px, calc(100vw - 36px)); right:0;}
+
+      /* Further reduce space between Join Circle and About on mobile */
+      #beta.section{padding-bottom:18px}
+      #about.section{padding-top:18px}
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <h1>Delphi</h1>
-    <nav aria-label="Primary">
-      <div class="nav-group">
-        <span>Oracle</span>
-        <span>Editorial</span>
-        <span>Collective+</span>
-        <span class="tt">
-          <strong style="display:block; font-weight:700; margin-bottom:8px;">Note From the Editor</strong>
-          We begin at a golden gate veiled in silver fog — San Francisco. Here our curators have embodied California coastal chic,
-          lingered at iconic locales, and been the beating heart behind our selection of refined discoveries. I hope Delphi makes you feel the way the best cities do: curious, excited, and a little more in love with life.
-        </span>
-      </div>
-    </nav>
 
-    <button class="cta-btn" onclick="document.getElementById('beta').scrollIntoView({behavior:'smooth'})">
-      Join Circle
-    </button>
+    <div class="header-right">
+      <button class="login-btn" id="loginBtn" type="button">Login</button>
+
+      <!-- Login popover -->
+      <div class="login-pop" id="loginPop" aria-label="Login">
+        <button class="login-close" id="loginClose" type="button" aria-label="Close">×</button>
+        <h3>Beta Access</h3>
+        <p>Enter your approved email to receive a magic link.</p>
+        <form id="login-form">
+          <div class="login-row">
+            <input type="email" name="email" placeholder="email" required />
+            <button type="submit">Send Link</button>
+          </div>
+          <div class="login-msg" id="login-msg"></div>
+        </form>
+      </div>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -185,17 +262,43 @@
     </div>
   </section>
 
+  <!-- Waitlist -->
+  <section class="section" id="beta">
+    <h2>Join</h2>
+    <p>Request Access to Oracle and Editorial</p>
+    <form id="beta-form">
+      <input type="text" name="name" placeholder="name" required>
+      <input
+        type="email"
+        name="email"
+        placeholder="email *we'll only email you when worth opening"
+        required
+      >
+      <input
+        type="tel"
+        name="zip"
+        inputmode="numeric"
+        pattern="\\d{5}"
+        maxlength="5"
+        placeholder="zip code *currently available in select cities"
+        aria-label="ZIP Code"
+        required
+      >
+      <button class="cta-btn" type="submit">Reserve Your Spot</button>
+      <p id="beta-message"></p>
+    </form>
+  </section>
+
   <!-- ABOUT DELPHI -->
   <section class="section" id="about">
     <h2><strong>ABOUT DELPHI</strong></h2>
-    <p class="section-subtitle">Delphi is invitation only.</p>
+    <p class="section-subtitle">New members are admitted on a rolling basis.</p>
   </section>
 
   <!-- Feature Image + About -->
   <section id="about-split" aria-label="Feature image and About Delphi">
     <div class="split">
       <div class="image-box">
-        <!-- You can keep this local image path or swap for a hosted image -->
         <img src="images/phone_01 copy.jpeg" alt="Delphi feature image">
       </div>
       <div class="about-copy" id="editorial">
@@ -209,78 +312,124 @@
     </div>
   </section>
 
-  <!-- Beta -->
-  <section class="section" id="beta">
-    <h2>Join Circle</h2>
-    <p>Limited access for our first collective.</p>
-    <form id="beta-form">
-      <input type="text" name="name" placeholder="name" required>
-      <input
-        type="email"
-        name="email"
-        placeholder="email *we'll only email you when worth opening"
-        required
-      >
-      <input
-        type="tel"
-        name="zip"
-        inputmode="numeric"
-        pattern="\d{5}"
-        maxlength="5"
-        placeholder="zip code *currently available in select cities"
-        aria-label="ZIP Code"
-        required
-      >
-      <button class="cta-btn" type="submit">Reserve Your Spot</button>
-      <p id="beta-message"></p>
-    </form>
-  </section>
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-note">
+      Delphi is currently in private beta. We never sell your data. We may use it privately and securely to improve your recommendations and overall experience.
+    </p>
+    Delphi © 2025 — Oracle Meets Editor
+  </div>
 
-  <div class="footer">Delphi © 2025 — Oracle Meets Editor</div>
-
-  <!-- Supabase signup script -->
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-    
-    const SUPABASE_URL = 'https://cidkxiclczieyofktfer.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpZGt4aWNsY3ppZXlvZmt0ZmVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzMjM4NzEsImV4cCI6MjA3ODg5OTg3MX0.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
+    // 1) WAITLIST PROJECT
+    const WAITLIST_SUPABASE_URL = 'https://cidkxiclczieyofktfer.supabase.co';
+    const WAITLIST_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpZGt4aWNsY3ppZXlvZmt0ZmVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzMjM4NzEsImV4cCI6MjA3ODg5OTg3MX0.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
+    const waitlist = createClient(WAITLIST_SUPABASE_URL, WAITLIST_SUPABASE_ANON_KEY);
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // 2) ORACLE PROJECT
+    const ORACLE_SUPABASE_URL = 'https://fblfwnldvoqrryrfmreu.supabase.co';
+    const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZibGZ3bmxkdm9xcnJ5cmZtcmV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMDMwODksImV4cCI6MjA3Nzc3OTA4OX0.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
+    const oracle = createClient(ORACLE_SUPABASE_URL, ORACLE_SUPABASE_ANON_KEY);
 
-    const form = document.getElementById('beta-form');
-    const messageEl = document.getElementById('beta-message');
+    // Waitlist form
+    const betaForm = document.getElementById('beta-form');
+    const betaMsg = document.getElementById('beta-message');
 
-    form.addEventListener('submit', async (event) => {
+    betaForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      messageEl.textContent = 'Submitting…';
+      betaMsg.textContent = 'Submitting…';
 
-      const formData = new FormData(form);
+      const formData = new FormData(betaForm);
       const name = (formData.get('name') || '').toString().trim();
       const email = (formData.get('email') || '').toString().trim();
       const zip = (formData.get('zip') || '').toString().trim();
 
       if (!email) {
-        messageEl.textContent = 'Please enter a valid email.';
+        betaMsg.textContent = 'Please enter a valid email.';
         return;
       }
 
       try {
-        const { error } = await supabase
-          .from('waitlist_signups')   
-          .insert([{ name, email, zip }]); // created_at is handled in the DB
+        const { error } = await waitlist
+          .from('waitlist_signups')
+          .insert([{ name, email, zip }]);
 
         if (error) {
           console.error(error);
-          messageEl.textContent = 'Something went wrong. Please try again in a moment.';
+          betaMsg.textContent = 'Something went wrong. Please try again in a moment.';
           return;
         }
 
-        messageEl.textContent = "You're on the list. We'll email your access code ahead of the private release.";
-        form.reset();
+        betaMsg.textContent = "You're on the list. We'll email your access code ahead of the private release.";
+        betaForm.reset();
       } catch (err) {
         console.error(err);
-        messageEl.textContent = 'Network issue. Please try again.';
+        betaMsg.textContent = 'Network issue. Please try again.';
+      }
+    });
+
+    // Login popover UI
+    const loginBtn = document.getElementById('loginBtn');
+    const loginPop = document.getElementById('loginPop');
+    const loginClose = document.getElementById('loginClose');
+    const loginForm = document.getElementById('login-form');
+    const loginMsg = document.getElementById('login-msg');
+
+    function openLogin(){
+      loginPop.classList.add('open');
+      const input = loginForm.querySelector('input[name="email"]');
+      if (input) input.focus();
+    }
+    function closeLogin(){
+      loginPop.classList.remove('open');
+      loginMsg.textContent = '';
+      loginForm.reset();
+    }
+
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginPop.classList.contains('open') ? closeLogin() : openLogin();
+    });
+    loginClose.addEventListener('click', closeLogin);
+
+    document.addEventListener('click', (e) => {
+      const within = loginPop.contains(e.target) || loginBtn.contains(e.target);
+      if (!within) closeLogin();
+    });
+
+    // Login: send magic link
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loginMsg.textContent = 'Sending link…';
+
+      const formData = new FormData(loginForm);
+      const email = (formData.get('email') || '').toString().trim();
+
+      if (!email) {
+        loginMsg.textContent = 'Enter a valid email.';
+        return;
+      }
+
+      try {
+        const { error } = await oracle.auth.signInWithOtp({
+          email,
+          options: {
+            emailRedirectTo: 'https://thedelphi.io/oracle'
+          }
+        });
+
+        if (error) {
+          console.error(error);
+          loginMsg.textContent = 'Could not send link. Try your approved email.';
+          return;
+        }
+
+        loginMsg.textContent = 'Magic link sent. Check your email.';
+      } catch (err) {
+        console.error(err);
+        loginMsg.textContent = 'Network issue. Try again.';
       }
     });
   </script>
