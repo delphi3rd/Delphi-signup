@@ -262,41 +262,6 @@
     </div>
   </section>
 
-<!-- Waitlist -->
-<section class="section" id="beta">
-  <h2>Join</h2>
-  <p>Request Access to Oracle and Editorial</p>
-
-  <form id="beta-form" novalidate>
-
-    <input 
-      type="text" 
-      name="name" 
-      placeholder="name"
-    >
-
-    <input
-      type="text"
-      name="email"
-      placeholder="email *we'll only email you when worth opening"
-    >
-
-    <input
-      type="text"
-      name="zip"
-      placeholder="zip code *currently available in select cities"
-      aria-label="ZIP Code"
-    >
-
-<button type="submit" class="cta-btn">
-  Reserve Your Spot
-</button>
-
-<div id="beta-message"></div>
-
-</form>
-</section>
-
 
   <!-- ABOUT DELPHI -->
   <section class="section" id="about">
@@ -342,42 +307,6 @@
     const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZibGZ3bmxkdm9xcnJ5cmZtcmV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMDMwODksImV4cCI6MjA3Nzc3OTA4OX0.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
     const oracle = createClient(ORACLE_SUPABASE_URL, ORACLE_SUPABASE_ANON_KEY);
 
-    // Waitlist form
-    const betaForm = document.getElementById('beta-form');
-    const betaMsg = document.getElementById('beta-message');
-
-    betaForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      betaMsg.textContent = 'Submitting…';
-
-      const formData = new FormData(betaForm);
-      const name = (formData.get('name') || '').toString().trim();
-      const email = (formData.get('email') || '').toString().trim();
-      const zip = (formData.get('zip') || '').toString().trim();
-
-      if (!email) {
-        betaMsg.textContent = 'Please enter a valid email.';
-        return;
-      }
-
-      try {
-        const { error } = await waitlist
-          .from('waitlist_signups')
-          .insert([{ name, email, zip }]);
-
-        if (error) {
-          console.error(error);
-          betaMsg.textContent = 'Something went wrong. Please try again in a moment.';
-          return;
-        }
-
-        betaMsg.textContent = "You're on the list. We'll email your access code ahead of the private release.";
-        betaForm.reset();
-      } catch (err) {
-        console.error(err);
-        betaMsg.textContent = 'Network issue. Please try again.';
-      }
-    });
 
     // Login popover UI
     const loginBtn = document.getElementById('loginBtn');
