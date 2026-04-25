@@ -39,14 +39,12 @@
     .cta-btn:hover,
     .login-btn:hover{background:#111;color:#fff}
 
-    /* Reserve button: make it feel intentional */
     .cta-btn{
       padding:12px 22px;
       font-size:15px;
       border-radius:999px;
     }
 
-    /* Login button stays crisp */
     .login-btn{
       padding:10px 14px;
       font-size:14px;
@@ -105,7 +103,7 @@
       font-size:16px;line-height:1;color:#111;
     }
 
-    /* Sections: tighten default spacing globally */
+    /* Sections */
     .section{ text-align:center; padding:28px 20px; }
     .section h2{
       font-family:"Times New Roman",serif;
@@ -115,10 +113,10 @@
     .section-subtitle{
       font-size:18px;
       color:#000000;
-      margin:0 0 18px; /* tighter */
+      margin:0 0 18px;
     }
 
-    /* HERO (desktop crop already good) */
+    /* Hero */
     .hero-with-bg{
       position:relative;
       display:flex;
@@ -126,89 +124,87 @@
       justify-content:center;
       text-align:center;
       color:#080808;
-      padding:80px 20px 52px; /* slightly tighter bottom */
+      padding:80px 20px 52px;
       background:
         url("images/column_01.jpg")
         center/cover no-repeat;
     }
     .hero-with-bg h2{
       font-size:56px;font-family:"Times New Roman",serif;
-      font-weight:400;margin:0 0 12px
+      font-weight:400;margin:0 0 12px;color:#000;
     }
     .hero-with-bg p{
       font-size:18px;max-width:740px;margin:6px auto 0;color:#222222
     }
 
-/* Feature Image + About */
-#about-split{
-  padding:12px 0 28px;
-}
+    /* Feature Image + About */
+    #about-split{
+      padding:12px 0 28px;
+    }
 
-.split{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:2fr 1fr; /* image dominates */
-  gap:40px;
-  align-items:center;
-}
+    .split{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
 
-.split .image-box{
-  width:100%;
-  border:1px solid #eee;
-  background:#f3f4f6;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:500px;
-  overflow:hidden;
-}
+    .split .image-box{
+      width:100%;
+      border:1px solid #eee;
+      background:#f3f4f6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:500px;
+      overflow:hidden;
+    }
 
-.split .image-box img{
-  width:100%;
-  height:100%;
-  object-fit:contain; /* shows full image without cutting it off */
-  object-position:center;
-  display:block;
-}
+    .split .image-box img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      display:block;
+    }
 
-/* TEXT — constrain + refine */
-.about-copy{
-  max-width:420px; /* prevents stretching */
-}
+    .about-copy{
+      max-width:420px;
+    }
 
-.about-copy p{
-  margin:0;
-  font-size:15px;
-  line-height:1.5;
-  color:#111;
-}
+    .about-copy p{
+      margin:0;
+      font-size:15px;
+      line-height:1.5;
+      color:#111;
+    }
 
-/* Drop cap — slightly reduced so it doesn’t overpower */
-.about-copy p:first-letter{
-  float:left;
-  font-family:"Times New Roman", serif;
-  font-weight:700;
-  font-size:90px;
-  line-height:.85;
-  letter-spacing:-1.5px;
-  padding-right:12px;
-  padding-top:4px;
-  margin-top:-2px;
-  color:#111;
-}
+    .about-copy p:first-letter{
+      float:left;
+      font-family:"Times New Roman", serif;
+      font-weight:700;
+      font-size:90px;
+      line-height:.85;
+      letter-spacing:-1.5px;
+      padding-right:12px;
+      padding-top:4px;
+      margin-top:-2px;
+      color:#111;
+    }
 
-    /* Beta form: tighten gaps */
+    /* Beta form */
     #beta-form{
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:10px;              /* KEY: remove huge whitespace */
+      gap:10px;
       margin-top:16px;
     }
     input[type="text"],input[type="email"],input[type="tel"]{
-      margin:0;              /* KEY: remove per-input margins */
+      margin:0;
       padding:14px;
       border:1px solid #111;
       font-size:14px;
@@ -221,6 +217,63 @@
     }
     #beta-message{
       font-size:13px;color:#666;margin-top:6px;min-height:18px
+    }
+
+    /* Editorial Carousel */
+    #delphi-editorial{
+      padding:34px 20px 22px;
+    }
+
+    #delphi-editorial .section-subtitle{
+      max-width:680px;
+      margin-left:auto;
+      margin-right:auto;
+      line-height:1.55;
+    }
+
+    .editorial-carousel{
+      max-width:1200px;
+      margin:22px auto 0;
+      overflow:hidden;
+      border-top:1px solid #eee;
+      border-bottom:1px solid #eee;
+      padding:18px 0;
+    }
+
+    .editorial-track{
+      display:flex;
+      gap:18px;
+      width:max-content;
+      animation:editorial-scroll 34s linear infinite;
+    }
+
+    .editorial-box{
+      width:260px;
+      aspect-ratio:4/5;
+      border:1px solid #eee;
+      background:#f3f4f6;
+      overflow:hidden;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:"Times New Roman",serif;
+      color:#777;
+      font-size:15px;
+      letter-spacing:.2px;
+      text-align:center;
+    }
+
+    .editorial-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @keyframes editorial-scroll{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
     }
 
     /* Footer */
@@ -242,15 +295,13 @@
       header{padding:20px 18px}
       header h1{font-size:34px}
 
-      /* Mobile hero: HARD crop */
       .hero-with-bg{
-        padding:52px 16px 18px;       /* KEY: very tight bottom */
+        padding:52px 16px 18px;
         background-position:center center;
       }
       .hero-with-bg h2{font-size:44px}
       .hero-with-bg p{font-size:16px}
 
-      /* Button bigger on mobile */
       .cta-btn{
         width:min(560px, 100%);
         padding:14px 22px;
@@ -260,7 +311,6 @@
       .split{grid-template-columns:1fr;gap:20px}
       .login-pop{width:min(320px, calc(100vw - 36px)); right:0;}
 
-      /* Further reduce space between Join Circle and About on mobile */
       #beta.section{padding-bottom:18px}
       #about.section{padding-top:18px}
     }
@@ -290,18 +340,17 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-with-bg" aria-label="Your Oracle for Taste and Culture">
+  <!-- Hero -->
+  <section class="hero-with-bg" aria-label="San Francisco's Culture Concierge">
     <div>
-      <h2>Culture Concierge</h2>
-      <p>Certainty without the search</p>
+      <h2>San Francisco's Culture Concierge</h2>
+      <p>certainty without the search</p>
     </div>
   </section>
 
-
-  <!-- ABOUT DELPHI -->
+  <!-- About Delphi -->
   <section class="section" id="about">
-    <h2><strong>Decide quickly and live fully</strong></h2>
+    <h2><strong>Welcome</strong></h2>
     <p class="section-subtitle"></p>
   </section>
 
@@ -319,6 +368,30 @@
     </div>
   </section>
 
+  <!-- Delphi Editorial -->
+  <section class="section" id="delphi-editorial">
+    <h2>Delphi Editorial</h2>
+    <p class="section-subtitle">
+      Essays and conversations on taste, culture, and how to live well in San Francisco. Available to members.
+    </p>
+
+    <div class="editorial-carousel">
+      <div class="editorial-track">
+        <div class="editorial-box"><img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1"></div>
+        <div class="editorial-box"><img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2"></div>
+        <div class="editorial-box"><img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3"></div>
+        <div class="editorial-box"><img src="images/editorial-04.jpg" alt="Delphi Editorial Issue 4"></div>
+        <div class="editorial-box"><img src="images/editorial-05.jpg" alt="Delphi Editorial Issue 5"></div>
+
+        <div class="editorial-box"><img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1"></div>
+        <div class="editorial-box"><img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2"></div>
+        <div class="editorial-box"><img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3"></div>
+        <div class="editorial-box"><img src="images/editorial-04.jpg" alt="Delphi Editorial Issue 4"></div>
+        <div class="editorial-box"><img src="images/editorial-05.jpg" alt="Delphi Editorial Issue 5"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <div class="footer">
     <p class="footer-note">
@@ -332,14 +405,13 @@
 
     // 1) WAITLIST PROJECT
     const WAITLIST_SUPABASE_URL = 'https://cidkxiclczieyofktfer.supabase.co';
-    const WAITLIST_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpZGt4aWNsY3ppZXlvZmt0ZmVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzMjM4NzEsImV4cCI6MjA3ODg5OTg3MX0.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
+    const WAITLIST_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaWRreGljbGN6aWV5b2ZrdGZlciIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzYzMzIzODcxLCJleHAiOjIwNzg4OTk4NzF9.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
     const waitlist = createClient(WAITLIST_SUPABASE_URL, WAITLIST_SUPABASE_ANON_KEY);
 
     // 2) ORACLE PROJECT
     const ORACLE_SUPABASE_URL = 'https://fblfwnldvoqrryrfmreu.supabase.co';
-    const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZibGZ3bmxkdm9xcnJ5cmZtcmV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMDMwODksImV4cCI6MjA3Nzc3OTA4OX0.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
+    const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmYmxmd25sZHZvcXJyeXJmbXJldSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzYyMjAzMDg5LCJleHAiOjIwNzc3NzkwODl9.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
     const oracle = createClient(ORACLE_SUPABASE_URL, ORACLE_SUPABASE_ANON_KEY);
-
 
     // Login popover UI
     const loginBtn = document.getElementById('loginBtn');
@@ -353,6 +425,7 @@
       const input = loginForm.querySelector('input[name="email"]');
       if (input) input.focus();
     }
+
     function closeLogin(){
       loginPop.classList.remove('open');
       loginMsg.textContent = '';
@@ -363,6 +436,7 @@
       e.preventDefault();
       loginPop.classList.contains('open') ? closeLogin() : openLogin();
     });
+
     loginClose.addEventListener('click', closeLogin);
 
     document.addEventListener('click', (e) => {
