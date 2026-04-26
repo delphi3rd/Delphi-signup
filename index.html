@@ -315,28 +315,83 @@
     }
 
     @media (max-width: 800px){
-      header{padding:20px 18px}
-      header h1{font-size:34px}
 
-      .hero-with-bg{
-        padding:52px 16px 18px;
-        background-position:center center;
-      }
-      .hero-with-bg h2{font-size:44px}
-      .hero-with-bg p{font-size:16px}
+  header{
+    padding:22px 28px;
+  }
 
-      .cta-btn{
-        width:min(560px, 100%);
-        padding:14px 22px;
-        font-size:16px;
-      }
+  header h1{
+    font-size:38px;
+  }
 
-      .split{grid-template-columns:1fr;gap:20px}
-      .login-pop{width:min(320px, calc(100vw - 36px)); right:0;}
+  .login-btn{
+    padding:9px 18px;
+    font-size:16px;
+  }
 
-      #beta.section{padding-bottom:18px}
-      #about.section{padding-top:18px}
-    }
+  /* HERO */
+  .hero-with-bg{
+    padding:34px 16px 26px;
+    min-height:120px;
+    background-position:center center;
+  }
+
+  .hero-with-bg h2{
+    font-size:42px;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  /* CERTAINTY SECTION */
+  #about{
+    padding:28px 20px 18px;
+  }
+
+  #about h2{
+    font-size:36px;
+    line-height:1.25;
+  }
+
+  /* IMAGE + TEXT */
+  #about-split{
+    padding:6px 0 18px;
+  }
+
+  .split{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:0 20px;
+  }
+
+  .split .image-box{
+    min-height:auto;
+  }
+
+  .about-copy{
+    max-width:100%;
+  }
+
+  .about-copy p{
+    font-size:20px;
+    line-height:1.35;
+  }
+
+  /* EDITORIAL */
+  #delphi-editorial{
+    padding:24px 20px 16px;
+  }
+
+  #delphi-editorial h2{
+    font-size:34px;
+    margin-bottom:8px;
+  }
+
+  #delphi-editorial .section-subtitle{
+    font-size:20px;
+    line-height:1.35;
+    margin-bottom:12px;
+  }
+}
   </style>
 </head>
 <body>
