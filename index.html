@@ -479,14 +479,9 @@
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-    // 1) WAITLIST PROJECT
-    const WAITLIST_SUPABASE_URL = 'https://cidkxiclczieyofktfer.supabase.co';
-    const WAITLIST_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaWRreGljbGN6aWV5b2ZrdGZlciIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzYzMzIzODcxLCJleHAiOjIwNzg4OTk4NzF9.10Vh8jbgAGg1RnaICRcOiPyQAdXzyB33R2hWwDVvkOU';
-    const waitlist = createClient(WAITLIST_SUPABASE_URL, WAITLIST_SUPABASE_ANON_KEY);
-
     // 2) ORACLE PROJECT
     const ORACLE_SUPABASE_URL = 'https://fblfwnldvoqrryrfmreu.supabase.co';
-    const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmYmxmd25sZHZvcXJyeXJmbXJldSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzYyMjAzMDg5LCJleHAiOjIwNzc3NzkwODl9.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
+    const ORACLE_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZibGZ3bmxkdm9xcnJ5cmZtcmV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMDMwODksImV4cCI6MjA3Nzc3OTA4OX0.eIIi7VWt0HCwLlkyRzVmu5YReDPrCo3VBscsN9dX5FM';
     const oracle = createClient(ORACLE_SUPABASE_URL, ORACLE_SUPABASE_ANON_KEY);
 
     // Login popover UI
