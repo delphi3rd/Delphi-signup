@@ -457,6 +457,48 @@
     </div>
   </section>
 
+<!-- Circle Waitlist -->
+
+<section class="section" id="waitlist">
+
+  <h2>Join Circle</h2>
+
+  <p class="section-subtitle">
+    Limited access for our next collective.
+  </p>
+
+  <form id="waitlist-form">
+
+    <input
+      type="text"
+      id="name"
+      placeholder="name"
+      required
+    >
+
+    <input
+      type="email"
+      id="email"
+      placeholder="email *we'll only write when it's worth opening"
+      required
+    >
+
+    <input
+      type="text"
+      id="zip"
+      placeholder="zip code *currently opening in select cities"
+    >
+
+    <button class="login-btn" type="submit">
+      Reserve Your Spot
+    </button>
+
+  </form>
+
+  <div id="waitlist-message"></div>
+
+</section>
+
   <!-- Footer -->
   <div class="footer">
     <p class="footer-note">
@@ -464,6 +506,72 @@
     </p>
     Delphi © 2025 — Oracle Meets Editor
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+
+const SUPABASE_URL ="https://rqvovlfufwbucrmimlgm.supabase.co/rest/v1/";
+
+const SUPABASE_ANON_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxdm92bGZ1ZndidWNybWltbGdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzNzQyNDQsImV4cCI6MjA5Njk1MDI0NH0.YdUO2mUVNumbwTf5DiOTtqLia4_DLS4M6EGmfEqC7CM"
+
+const supabaseClient =
+supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+</script>
+
+<script>
+
+document
+.getElementById("waitlist-form")
+.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("name").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const zip =
+    document.getElementById("zip").value;
+
+  const message =
+    document.getElementById("waitlist-message");
+
+  const { error } =
+    await supabaseClient
+      .from("circle_waitlist")
+      .insert([
+        {
+          name: name,
+          email: email,
+          zip_code: zip
+        }
+      ]);
+
+  if (error) {
+
+    message.innerText =
+      "Already on the list or something went wrong.";
+
+    return;
+  }
+
+  message.innerText =
+    "Reserved. We'll be in touch.";
+
+  document
+    .getElementById("waitlist-form")
+    .reset();
+
+});
+
+</script>
 
 </body>
 </html>
