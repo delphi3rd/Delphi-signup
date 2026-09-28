@@ -275,19 +275,6 @@
   text-align:center;
 }
 
-    .about-copy p:first-letter{
-      float:left;
-      font-family:"Times New Roman", serif;
-      font-weight:700;
-      font-size:90px;
-      line-height:.85;
-      letter-spacing:-1.5px;
-      padding-right:12px;
-      padding-top:4px;
-      margin-top:-2px;
-      color:#111;
-    }
-
     /* Beta form */
     #beta-form{
       display:flex;
@@ -497,33 +484,139 @@
         <img src="images/2027_Studio.jpg" alt="Delphi feature image">
       </div>
       <div class="about-copy" id="editorial">
-<p>
-  The Delphi input/output is an editorial and technology studio harmonizing classical storytelling and new-fashioned.
 
-  The next influential publications will be exclusive articles readers consult through private digital conversation. We engineer editorial for a world moving from the browsing era to the ai-native era.
+  <div class="editorial-intro">
+    <p>
+      The Delphi input/output is an editorial and technology studio harmonizing classical storytelling and new-fashioned.
+    </p>
 
-  The Mechanics of Modern Editorial
+    <p>
+      The next influential publications will be exclusive articles readers consult through private digital conversation. We engineer editorial for a world moving from the browsing era to the ai-native era.
+    </p>
+  </div>
 
-  Architect Discovery
-  own how readers encounter the story, recommendation, or product most relevant to them
+  <h2>The Mechanics of Modern Editorial</h2>
 
-  Amplify Authority
-  scale the loop that converts editorial influence into market purchasing power
+  <div class="principle">
+    <h3>Architect Discovery</h3>
+    <p>own how readers encounter the story, recommendation, or product most relevant to them</p>
+  </div>
 
-  Endgame over Engagement
-  evolve the reader to make a decision; be a curator, not a content factory
+  <div class="principle">
+    <h3>Amplify Authority</h3>
+    <p>scale the loop that converts editorial influence into market purchasing power</p>
+  </div>
 
-  Eliminate Silos
-  align writers, designers, coders, and marketers with living system data 
+  <div class="principle">
+    <h3>Endgame over Engagement</h3>
+    <p>evolve the reader to make a decision; be a curator, not a content factory</p>
+  </div>
 
-  Be a Trusted Source of Truth
-  train systems to reason from your brand's human corpus
+  <div class="principle">
+    <h3>Eliminate Silos</h3>
+    <p>align writers, designers, coders, and marketers with living system data</p>
+  </div>
 
-  Inquires & commissions, hello@thedelphi.io
+  <div class="principle">
+    <h3>Be a Trusted Source of Truth</h3>
+    <p>train systems to reason from your brand's human corpus</p>
+  </div>
+
+  <p class="commissions">
+    <em>Inquires & commissions,</em> hello@thedelphi.io
   </p>
+
 </div>
-    </div>
-  </section>
+
+<style>
+.about-copy{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  padding:70px 30px 90px;
+  box-sizing:border-box;
+  text-align:center;
+  font-family:"Times New Roman",serif;
+  color:#111;
+}
+
+.editorial-intro{
+  max-width:900px;
+  margin:0 auto 65px;
+}
+
+.editorial-intro p{
+  margin:0 auto 34px;
+  font-size:26px;
+  line-height:1.55;
+}
+
+.about-copy h2{
+  margin:0 0 55px;
+  font-family:"Times New Roman",serif;
+  font-size:30px;
+  font-weight:400;
+}
+
+.principle{
+  margin:0 auto 48px;
+  max-width:900px;
+}
+
+.principle h3{
+  margin:0 0 5px;
+  font-family:"Times New Roman",serif;
+  font-size:27px;
+  line-height:1.2;
+  font-weight:400;
+}
+
+.principle p{
+  margin:0;
+  font-family:"Times New Roman",serif;
+  font-size:21px;
+  line-height:1.45;
+}
+
+.commissions{
+  margin:65px 0 0;
+  font-family:"Times New Roman",serif;
+  font-size:20px;
+}
+
+@media (max-width:800px){
+  .about-copy{
+    padding:45px 22px 60px;
+  }
+
+  .editorial-intro{
+    margin-bottom:50px;
+  }
+
+  .editorial-intro p{
+    font-size:21px;
+    line-height:1.45;
+    margin-bottom:26px;
+  }
+
+  .about-copy h2{
+    font-size:27px;
+    margin-bottom:45px;
+  }
+
+  .principle{
+    margin-bottom:38px;
+  }
+
+  .principle h3{
+    font-size:23px;
+  }
+
+  .principle p{
+    font-size:18px;
+  }
+}
+</style>
 
   <!-- Delphi Editorial -->
   <section class="section" id="delphi-editorial">
