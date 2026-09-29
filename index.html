@@ -502,6 +502,26 @@
       </p>
     </div>
 
+    </div>
+
+  <div class="services-block">
+    <h2 class="services-title"><em>Services</em></h2>
+
+    <div class="services-row">
+      <div class="service-item">
+        Bespoke code for any digital dream
+      </div>
+
+      <div class="service-item">
+        The newest tools, in service of your brand's oldest instincts.
+      </div>
+
+      <div class="service-item">
+        Internal systems to elevate your team
+      </div>
+    </div>
+  </div>
+    
     <h2>The Mechanics of Modern Editorial</h2>
 
     <div class="principle">
@@ -595,6 +615,69 @@
   margin:65px 0 0;
   font-family:"Cormorant Garamond",serif;
   font-size:20px;
+}
+
+.services-block{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto 85px;
+  text-align:center;
+}
+
+.services-title{
+  margin:0 0 45px !important;
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px !important;
+  font-weight:400 !important;
+  font-style:italic;
+}
+
+.services-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  align-items:stretch;
+  width:100%;
+}
+
+.service-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 28px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  line-height:1.35;
+  font-weight:400;
+  text-align:center;
+}
+
+.service-item + .service-item{
+  border-left:1px solid #111;
+}
+
+@media (max-width:800px){
+  .services-block{
+    margin-bottom:60px;
+  }
+
+  .services-title{
+    margin-bottom:28px !important;
+    font-size:25px !important;
+  }
+
+  .services-row{
+    grid-template-columns:1fr;
+  }
+
+  .service-item{
+    padding:22px 10px;
+    font-size:21px;
+  }
+
+  .service-item + .service-item{
+    border-left:none;
+    border-top:1px solid #111;
+  }
 }
 
 @media (max-width:800px){
