@@ -1,35 +1,61 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8"/>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Delphi | Editorial, engineered</title>
+
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
     /* Base */
+
     html,body{
-  margin:0;
-  background:#fff;
-  color:#111;
-  font-family:"Cormorant Garamond",serif;
-  line-height:1.6;
-}
+      margin:0;
+      background:#fff;
+      color:#111;
+      font-family:"Cormorant Garamond",serif;
+      line-height:1.6;
+    }
+
 
     /* Header */
+
     header{
-      position:sticky;top:0;z-index:1000;
+      position:sticky;
+      top:0;
+      z-index:1000;
       background:#fff;
-      display:flex;align-items:center;justify-content:space-between;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       padding:34px 60px;
     }
+
     header h1{
-      margin:0;font-family:"Cormorant Garamond",serif;
-      font-weight:400;letter-spacing:.5px;font-size:40px;
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      font-weight:400;
+      letter-spacing:.5px;
+      font-size:40px;
     }
 
-    .header-right{display:flex;align-items:center;gap:18px;position:relative}
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      position:relative;
+    }
+
 
     /* Buttons */
+
     .cta-btn,
     .login-btn{
       border:1px solid #111;
@@ -41,8 +67,12 @@
       transition:background .2s,color .2s;
       white-space:nowrap;
     }
+
     .cta-btn:hover,
-    .login-btn:hover{background:#111;color:#fff}
+    .login-btn:hover{
+      background:#111;
+      color:#fff;
+    }
 
     .cta-btn{
       padding:12px 22px;
@@ -56,32 +86,36 @@
       border-radius:0;
     }
 
-/* Editorial button */
-.editorial-btn{
-  display:inline-block;
-  margin-top:18px;
-  padding:12px 28px;
-  border:1px solid #111;
-  background:transparent;
-  color:#111;
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  transition:background .2s,color .2s;
-}
 
-.editorial-btn:hover{
-  background:#111;
-  color:#fff;
-}
+    /* Editorial button */
 
-.substack-cta{
-  text-align:center;
-  padding:20px 20px 40px;
-}
+    .editorial-btn{
+      display:inline-block;
+      margin-top:18px;
+      padding:12px 28px;
+      border:1px solid #111;
+      background:transparent;
+      color:#111;
+      font-family:"Helvetica Neue",Arial,sans-serif;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      transition:background .2s,color .2s;
+    }
+
+    .editorial-btn:hover{
+      background:#111;
+      color:#fff;
+    }
+
+    .substack-cta{
+      text-align:center;
+      padding:20px 20px 40px;
+    }
+
 
     /* Login popover */
+
     .login-pop{
       position:absolute;
       right:0;
@@ -95,7 +129,11 @@
       z-index:2000;
       text-align:left;
     }
-    .login-pop.open{display:block}
+
+    .login-pop.open{
+      display:block;
+    }
+
     .login-pop h3{
       margin:0 0 10px;
       font-family:"Cormorant Garamond",serif;
@@ -103,19 +141,27 @@
       font-size:16px;
       letter-spacing:.2px;
     }
+
     .login-pop p{
       margin:0 0 12px;
       font-size:12px;
       color:#555;
       line-height:1.4;
     }
-    .login-row{display:flex;gap:10px;align-items:center}
+
+    .login-row{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
     .login-row input{
       flex:1;
       padding:10px 10px;
       border:1px solid #111;
       font-size:13px;
     }
+
     .login-row button{
       padding:10px 12px;
       border:1px solid #111;
@@ -125,34 +171,59 @@
       font-size:13px;
       font-family:"Cormorant Garamond",serif;
     }
-    .login-row button:hover{opacity:.9}
-    .login-msg{margin-top:10px;font-size:12px;color:#666;min-height:16px}
-    .login-close{
-      position:absolute;top:10px;right:10px;
-      border:none;background:transparent;cursor:pointer;
-      font-size:16px;line-height:1;color:#111;
+
+    .login-row button:hover{
+      opacity:.9;
     }
+
+    .login-msg{
+      margin-top:10px;
+      font-size:12px;
+      color:#666;
+      min-height:16px;
+    }
+
+    .login-close{
+      position:absolute;
+      top:10px;
+      right:10px;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+      font-size:16px;
+      line-height:1;
+      color:#111;
+    }
+
 
     /* Sections */
-    .section{ text-align:center; padding:28px 20px; }
+
+    .section{
+      text-align:center;
+      padding:28px 20px;
+    }
+
     .section h2{
       font-family:"Cormorant Garamond",serif;
-      font-size:32px;margin:0 0 10px;font-weight:700
+      font-size:32px;
+      margin:0 0 10px;
+      font-weight:700;
     }
-    #about{
-  padding:50px 20px 30px;
-}
 
-#about h2{
-  font-family:"Cormorant Garamond",serif;
-  font-style:italic;
-  font-weight:400;
-  font-size:42px;
-  letter-spacing:.3px;
-  color:#000000;
-  margin:0;
-  text-align:center;
-}
+    #about{
+      padding:50px 20px 30px;
+    }
+
+    #about h2{
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-weight:400;
+      font-size:42px;
+      letter-spacing:.3px;
+      color:#000000;
+      margin:0;
+      text-align:center;
+    }
 
     .section-subtitle{
       font-size:18px;
@@ -160,7 +231,9 @@
       margin:0 0 18px;
     }
 
+
     /* Hero */
+
     .hero-with-bg{
       position:relative;
       display:flex;
@@ -169,119 +242,221 @@
       text-align:center;
       color:#080808;
       padding:80px 20px 52px;
-      background:
-        url("images/hands_banner.jpg")
-        center/cover no-repeat;
+      background:url("images/hands_banner.jpg") center/cover no-repeat;
     }
+
     .hero-with-bg h2{
-      font-size:12px;font-family:"Cormorant Garamond",serif;
-      font-weight:400;margin:0 0 12px;color:#d4d3d1;
+      font-size:12px;
+      font-family:"Cormorant Garamond",serif;
+      font-weight:400;
+      margin:0 0 12px;
+      color:#d4d3d1;
     }
+
     .hero-with-bg p{
-  font-family:"Cormorant Garamond",serif;
-  font-style:italic;
-  font-weight:400;
-  font-size:24px;
-  letter-spacing:.4px;
-  max-width:700px;
-  margin:14px auto 0;
-  text-align:center;
-  color:#000000;
-}
-/* Header Image */
-.header-image{
-  position:relative;
-  width:100%;
-  height:420px;
-  overflow:hidden;
-}
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-weight:400;
+      font-size:24px;
+      letter-spacing:.4px;
+      max-width:700px;
+      margin:14px auto 0;
+      text-align:center;
+      color:#000000;
+    }
 
-.header-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:53% center;
-  display:block;
-}
 
-.header-image-title{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:350px;
-  margin:0;
-  padding:0 30px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(64px,8vw,145px);
-  font-weight:400;
-  letter-spacing:-2px;
-  line-height:1;
-  color:#000;
-  text-align:center;
-}
+    /* Header Image */
 
-@media (max-width:800px){
-  .header-image{
-    height:260px;
-  }
+    .header-image{
+      position:relative;
+      width:100%;
+      height:420px;
+      overflow:hidden;
+    }
 
-  .header-image-title{
-    font-size:clamp(48px,13vw,80px);
-    letter-spacing:-1px;
-  }
-}
+    .header-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:53% center;
+      display:block;
+    }
 
-/* Feature Image + About */
+    .header-image-title{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:350px;
+      margin:0;
+      padding:0 30px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(64px,8vw,145px);
+      font-weight:400;
+      letter-spacing:-2px;
+      line-height:1;
+      color:#000;
+      text-align:center;
+    }
+
+
+    /* Feature Image + About */
+
     #about-split{
       padding:12px 0 28px;
     }
 
     .split{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:40px;
-}
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:40px;
+    }
 
-    .split .image-box{
-  width:100%;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:500px;
-  overflow:hidden;
-  border:none;
-}
 
-    .split .image-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
+    /* TWO SIDE-BY-SIDE ABOUT IMAGES */
+
+    .about-images{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .about-images .image-box{
+      width:100%;
+      height:500px;
+      background:#fff;
+      overflow:hidden;
+      border:none;
+    }
+
+    .about-images .image-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+
+
+    /* About Copy */
 
     .about-copy{
-  max-width:900px;
-  margin:0 auto;
-  text-align:center;
-}
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:70px 30px 90px;
+      box-sizing:border-box;
+      text-align:center;
+      font-family:"Cormorant Garamond",serif;
+      color:#111;
+    }
 
     .about-copy p{
-  margin:0;
-  font-size:20px;
-  line-height:1.5;
-  color:#111;
-  text-align:center;
-}
+      margin:0;
+      font-size:20px;
+      line-height:1.5;
+      color:#111;
+      text-align:center;
+    }
+
+    .editorial-intro{
+      max-width:900px;
+      margin:0 auto 65px;
+    }
+
+    .editorial-intro p{
+      margin:0 auto 34px;
+      font-size:26px;
+      line-height:1.55;
+    }
+
+    .about-copy h2{
+      margin:0 0 55px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:400;
+    }
+
+
+    /* Services */
+
+    .services-block{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto 85px;
+      text-align:center;
+    }
+
+    .services-title{
+      margin:0 0 45px !important;
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px !important;
+      font-weight:400 !important;
+      font-style:italic;
+    }
+
+    .services-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      align-items:stretch;
+      width:100%;
+    }
+
+    .service-item{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 28px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:24px;
+      line-height:1.35;
+      font-weight:400;
+      text-align:center;
+    }
+
+    .service-item + .service-item{
+      border-left:1px solid #111;
+    }
+
+
+    /* Principles */
+
+    .principle{
+      margin:0 auto 48px;
+      max-width:900px;
+    }
+
+    .principle h3{
+      margin:0 0 5px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px;
+      line-height:1.2;
+      font-weight:400;
+    }
+
+    .principle p{
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      font-size:21px;
+      line-height:1.45;
+    }
+
+    .commissions{
+      margin:65px 0 0;
+      font-family:"Cormorant Garamond",serif;
+      font-size:20px;
+    }
+
 
     /* Beta form */
+
     #beta-form{
       display:flex;
       flex-direction:column;
@@ -289,7 +464,10 @@
       gap:10px;
       margin-top:16px;
     }
-    input[type="text"],input[type="email"],input[type="tel"]{
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"]{
       margin:0;
       padding:14px;
       border:1px solid #111;
@@ -297,34 +475,43 @@
       max-width:560px;
       width:100%;
     }
+
     input::placeholder{
       font-size:12px;
       color:#777;
     }
+
     #beta-message{
-      font-size:13px;color:#666;margin-top:6px;min-height:18px
+      font-size:13px;
+      color:#666;
+      margin-top:6px;
+      min-height:18px;
     }
 
+
     /* Circle Waitlist */
-#waitlist-form{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:12px;
-  max-width:1000px;
-  margin:0 auto;
-}
 
-#waitlist-form input{
-  width:100%;
-  max-width:1000px;
-}
+    #waitlist-form{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      max-width:1000px;
+      margin:0 auto;
+    }
 
-#waitlist-form button{
-  margin-top:8px;
-}
+    #waitlist-form input{
+      width:100%;
+      max-width:1000px;
+    }
+
+    #waitlist-form button{
+      margin-top:8px;
+    }
+
 
     /* Editorial Carousel */
+
     #delphi-editorial{
       padding:34px 20px 22px;
     }
@@ -337,12 +524,12 @@
     }
 
     .editorial-carousel{
-  max-width:1200px;
-  margin:22px auto 0;
-  overflow:hidden;
-  padding:18px 0;
-  border:none;
-}
+      max-width:1200px;
+      margin:22px auto 0;
+      overflow:hidden;
+      padding:18px 0;
+      border:none;
+    }
 
     .editorial-track{
       display:flex;
@@ -352,16 +539,16 @@
     }
 
     .editorial-box{
-  width:260px;
-  aspect-ratio:4/5;
-  background:#fff;
-  overflow:hidden;
-  flex:0 0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:none;
-}
+      width:260px;
+      aspect-ratio:4/5;
+      background:#fff;
+      overflow:hidden;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:none;
+    }
 
     .editorial-box img{
       width:100%;
@@ -372,11 +559,18 @@
     }
 
     @keyframes editorial-scroll{
-      0%{transform:translateX(0)}
-      100%{transform:translateX(-50%)}
+      0%{
+        transform:translateX(0);
+      }
+
+      100%{
+        transform:translateX(-50%);
+      }
     }
 
+
     /* Footer */
+
     .footer{
       text-align:center;
       padding:34px 20px;
@@ -384,6 +578,7 @@
       color:#666;
       font-size:14px;
     }
+
     .footer-note{
       margin:0 0 10px;
       font-size:12px;
@@ -391,375 +586,437 @@
       line-height:1.4;
     }
 
-    @media (max-width: 800px){
 
-  header{
-    padding:22px 28px;
-  }
+    /* MOBILE */
 
-  header h1{
-    font-size:38px;
-  }
+    @media (max-width:800px){
 
-  .login-btn{
-    padding:9px 18px;
-    font-size:16px;
-  }
+      header{
+        padding:22px 28px;
+      }
 
-  /* HERO */
-  .hero-with-bg{
-    padding:34px 16px 26px;
-    min-height:120px;
-    background-position:center center;
-  }
+      header h1{
+        font-size:38px;
+      }
 
-  .hero-with-bg h2{
-    font-size:12px;
-    line-height:1;
-    white-space:nowrap;
-  }
+      .login-btn{
+        padding:9px 18px;
+        font-size:16px;
+      }
 
-  /* CERTAINTY SECTION */
-  #about{
-    padding:28px 20px 18px;
-  }
 
-  #about h2{
-    font-size:36px;
-    line-height:1.25;
-  }
+      /* Header Image */
 
-  /* IMAGE + TEXT */
-  #about-split{
-    padding:6px 0 18px;
-  }
+      .header-image{
+        height:260px;
+      }
 
-  .split{
-    grid-template-columns:1fr;
-    gap:16px;
-    padding:0 20px;
-  }
+      .header-image-title{
+        font-size:clamp(48px,13vw,80px);
+        letter-spacing:-1px;
+        gap:40px;
+      }
 
-  .split .image-box{
-    min-height:auto;
-  }
 
-  .about-copy{
-    max-width:100%;
-  }
+      /* Hero */
 
-  .about-copy p{
-    font-size:20px;
-    line-height:1.35;
-  }
+      .hero-with-bg{
+        padding:34px 16px 26px;
+        min-height:120px;
+        background-position:center center;
+      }
 
-  /* EDITORIAL */
-  #delphi-editorial{
-    padding:24px 20px 16px;
-  }
+      .hero-with-bg h2{
+        font-size:12px;
+        line-height:1;
+        white-space:nowrap;
+      }
 
-  #delphi-editorial h2{
-    font-size:34px;
-    margin-bottom:8px;
-  }
 
-  #delphi-editorial .section-subtitle{
-    font-size:20px;
-    line-height:1.35;
-    margin-bottom:12px;
-  }
-}
+      /* About */
+
+      #about{
+        padding:28px 20px 18px;
+      }
+
+      #about h2{
+        font-size:36px;
+        line-height:1.25;
+      }
+
+      #about-split{
+        padding:6px 0 18px;
+      }
+
+      .split{
+        gap:16px;
+        padding:0 20px;
+      }
+
+      .about-copy{
+        max-width:100%;
+        padding:45px 22px 60px;
+      }
+
+      .about-copy p{
+        font-size:20px;
+        line-height:1.35;
+      }
+
+      .editorial-intro{
+        margin-bottom:50px;
+      }
+
+      .editorial-intro p{
+        font-size:21px;
+        line-height:1.45;
+        margin-bottom:26px;
+      }
+
+      .about-copy h2{
+        font-size:27px;
+        margin-bottom:45px;
+      }
+
+
+      /* Two images remain side-by-side on mobile */
+
+      .about-images{
+        grid-template-columns:repeat(2, 1fr);
+        gap:8px;
+      }
+
+      .about-images .image-box{
+        height:300px;
+      }
+
+
+      /* Services */
+
+      .services-block{
+        margin-bottom:60px;
+      }
+
+      .services-title{
+        margin-bottom:28px !important;
+        font-size:25px !important;
+      }
+
+      .services-row{
+        grid-template-columns:1fr;
+      }
+
+      .service-item{
+        padding:22px 10px;
+        font-size:21px;
+      }
+
+      .service-item + .service-item{
+        border-left:none;
+        border-top:1px solid #111;
+      }
+
+
+      /* Principles */
+
+      .principle{
+        margin-bottom:38px;
+      }
+
+      .principle h3{
+        font-size:23px;
+      }
+
+      .principle p{
+        font-size:18px;
+      }
+
+
+      /* Editorial */
+
+      #delphi-editorial{
+        padding:24px 20px 16px;
+      }
+
+      #delphi-editorial h2{
+        font-size:34px;
+        margin-bottom:8px;
+      }
+
+      #delphi-editorial .section-subtitle{
+        font-size:20px;
+        line-height:1.35;
+        margin-bottom:12px;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
+
+
   <!-- Header -->
-<header>
-  <h1>Delphi</h1>
-</header>
-<section class="header-image">
-  <img src="images/headerdd.jpg" alt="">
-  <h2 class="header-image-title">
-  <span>Editorial</span>
-  <span>Engineered</span>
-</h2>
-</section>
 
-</section>
+  <header>
+    <h1>Delphi</h1>
+  </header>
 
-  <!-- Feature Image + About -->
-  <section id="about-split" aria-label="Feature image and About Delphi">
-    <div class="split">
 
-  <div class="about-copy" id="editorial">
+  <!-- Header Image -->
 
-    <div class="editorial-intro">
-      <p>
-        The Delphi input/output is an editorial and technology studio harmonizing classical storytelling and new-fashioned tech.
-      </p>
+  <section class="header-image">
 
-      <p>
-        Building the next influential publications exclusively read through private digital conversation. Delphi engineers editorial for a world moving from the browsing era to the ai-native era.
-      </p>
-    </div>
-    
-  <div class="services-block">
-    <h2 class="services-title"><em>Services</em></h2>
+    <img src="images/headerdd.jpg" alt="">
 
-    <div class="services-row">
-      <div class="service-item">
-        Bespoke code for any digital dream
-      </div>
+    <h2 class="header-image-title">
+      <span>Editorial</span>
+      <span>Engineered</span>
+    </h2>
 
-      <div class="service-item">
-        The newest tools, in service of your brand's oldest instincts.
-      </div>
-
-      <div class="service-item">
-        Internal systems to elevate your team
-      </div>
-    </div>
-  </div>
-    
-    <h2>The Mechanics of Modern Editorial</h2>
-
-    <div class="principle">
-      <h3>Architect Discovery</h3>
-      <p>own how readers encounter the story, recommendation, or product most relevant to them</p>
-    </div>
-
-    <div class="principle">
-      <h3>Amplify Authority</h3>
-      <p>scale the loop that converts editorial influence into market purchasing power</p>
-    </div>
-
-    <div class="principle">
-      <h3>Endgame over Engagement</h3>
-      <p>evolve the reader to make a decision; be a curator, not a content factory</p>
-    </div>
-
-    <div class="principle">
-      <h3>Eliminate Silos</h3>
-      <p>align writers, designers, coders, and marketers with living system data</p>
-    </div>
-
-    <div class="principle">
-      <h3>Be a Trusted Source of Truth</h3>
-      <p>train systems to reason from your brand's human corpus</p>
-    </div>
-
-    <p class="commissions">
-      <em>Inquires & commissions,</em> hello@thedelphi.io
-    </p>
-
-  </div>
-
-  <div class="image-box">
-    <img src="images/2027_Studio.jpg" alt="Delphi feature image">
-  </div>
-
-</div>
-
-<style>
-.about-copy{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  padding:70px 30px 90px;
-  box-sizing:border-box;
-  text-align:center;
-  font-family:"Cormorant Garamond",serif;
-  color:#111;
-}
-
-.editorial-intro{
-  max-width:900px;
-  margin:0 auto 65px;
-}
-
-.editorial-intro p{
-  margin:0 auto 34px;
-  font-size:26px;
-  line-height:1.55;
-}
-
-.about-copy h2{
-  margin:0 0 55px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:30px;
-  font-weight:400;
-}
-
-.principle{
-  margin:0 auto 48px;
-  max-width:900px;
-}
-
-.principle h3{
-  margin:0 0 5px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:27px;
-  line-height:1.2;
-  font-weight:400;
-}
-
-.principle p{
-  margin:0;
-  font-family:"Cormorant Garamond",serif;
-  font-size:21px;
-  line-height:1.45;
-}
-
-.commissions{
-  margin:65px 0 0;
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-}
-
-.services-block{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto 85px;
-  text-align:center;
-}
-
-.services-title{
-  margin:0 0 45px !important;
-  font-family:"Cormorant Garamond",serif;
-  font-size:27px !important;
-  font-weight:400 !important;
-  font-style:italic;
-}
-
-.services-row{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  align-items:stretch;
-  width:100%;
-}
-
-.service-item{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 28px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:24px;
-  line-height:1.35;
-  font-weight:400;
-  text-align:center;
-}
-
-.service-item + .service-item{
-  border-left:1px solid #111;
-}
-
-@media (max-width:800px){
-  .services-block{
-    margin-bottom:60px;
-  }
-
-  .services-title{
-    margin-bottom:28px !important;
-    font-size:25px !important;
-  }
-
-  .services-row{
-    grid-template-columns:1fr;
-  }
-
-  .service-item{
-    padding:22px 10px;
-    font-size:21px;
-  }
-
-  .service-item + .service-item{
-    border-left:none;
-    border-top:1px solid #111;
-  }
-}
-
-@media (max-width:800px){
-  .about-copy{
-    padding:45px 22px 60px;
-  }
-
-  .editorial-intro{
-    margin-bottom:50px;
-  }
-
-  .editorial-intro p{
-    font-size:21px;
-    line-height:1.45;
-    margin-bottom:26px;
-  }
-
-  .about-copy h2{
-    font-size:27px;
-    margin-bottom:45px;
-  }
-
-  .principle{
-    margin-bottom:38px;
-  }
-
-  .principle h3{
-    font-size:23px;
-  }
-
-  .principle p{
-    font-size:18px;
-  }
-}
-</style>
-
-  <!-- Delphi Editorial -->
-  <section class="section" id="delphi-editorial">
-    <h2>The Oracle Editorial</h2>
-<p class="section-subtitle">
-  Living articles on modern mythology shaping city life.
-</p>
-
-<p>
-  Available exclusively to circle I and II members. Circles currently closed. 
-</p>
-
-    <div class="editorial-carousel">
-      <div class="editorial-track">
-        <div class="editorial-box"><img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1"></div>
-        <div class="editorial-box"><img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2"></div>
-        <div class="editorial-box"><img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3"></div>
-        <div class="editorial-box"><img src="images/721.jpeg" alt="Delphi Editorial Issue 4"></div>
-        <div class="editorial-box"><img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5"></div>
-
-        <div class="editorial-box"><img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1"></div>
-        <div class="editorial-box"><img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2"></div>
-        <div class="editorial-box"><img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3"></div>
-        <div class="editorial-box"><img src="images/721.jpeg" alt="Delphi Editorial Issue 4"></div>
-        <div class="editorial-box"><img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5"></div>
-      </div>
-    </div>
   </section>
 
-<div class="substack-cta">
+
+  <!-- Feature Images + About -->
+
+  <section id="about-split" aria-label="Feature images and About Delphi">
+
+    <div class="split">
 
 
-  <a
-    href="https://www.instagram.com/thedelphi.io/"
-    target="_blank"
-    class="editorial-btn"
-  >
-    In the meantime
-  </a>
+      <!-- ABOUT COPY -->
 
-</div>
+      <div class="about-copy" id="editorial">
+
+
+        <div class="editorial-intro">
+
+          <p>
+            The Delphi input/output is an editorial and technology studio harmonizing classical storytelling and new-fashioned tech.
+          </p>
+
+          <p>
+            Building the next influential publications exclusively read through private digital conversation. Delphi engineers editorial for a world moving from the browsing era to the ai-native era.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="services-block">
+
+          <h2 class="services-title">
+            <em>Services</em>
+          </h2>
+
+          <div class="services-row">
+
+            <div class="service-item">
+              Bespoke code for any digital dream
+            </div>
+
+            <div class="service-item">
+              The newest tools, in service of your brand's oldest instincts.
+            </div>
+
+            <div class="service-item">
+              Internal systems to elevate your team
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MECHANICS -->
+
+        <h2>The Mechanics of Modern Editorial</h2>
+
+
+        <div class="principle">
+
+          <h3>Architect Discovery</h3>
+
+          <p>
+            own how readers encounter the story, recommendation, or product most relevant to them
+          </p>
+
+        </div>
+
+
+        <div class="principle">
+
+          <h3>Amplify Authority</h3>
+
+          <p>
+            scale the loop that converts editorial influence into market purchasing power
+          </p>
+
+        </div>
+
+
+        <div class="principle">
+
+          <h3>Endgame over Engagement</h3>
+
+          <p>
+            evolve the reader to make a decision; be a curator, not a content factory
+          </p>
+
+        </div>
+
+
+        <div class="principle">
+
+          <h3>Eliminate Silos</h3>
+
+          <p>
+            align writers, designers, coders, and marketers with living system data
+          </p>
+
+        </div>
+
+
+        <div class="principle">
+
+          <h3>Be a Trusted Source of Truth</h3>
+
+          <p>
+            train systems to reason from your brand's human corpus
+          </p>
+
+        </div>
+
+
+        <p class="commissions">
+          <em>Inquires & commissions,</em> hello@thedelphi.io
+        </p>
+
+
+      </div>
+
+
+      <!-- TWO SIDE-BY-SIDE IMAGES -->
+
+      <div class="about-images">
+
+        <div class="image-box">
+          <img src="images/2027_Studio.jpg" alt="Delphi Studio">
+        </div>
+
+        <div class="image-box">
+          <img src="images/20272_studio.jpg" alt="Delphi Studio">
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- Delphi Editorial -->
+
+  <section class="section" id="delphi-editorial">
+
+    <h2>The Oracle Editorial</h2>
+
+    <p class="section-subtitle">
+      Living articles on modern mythology shaping city life.
+    </p>
+
+    <p>
+      Available exclusively to circle I and II members. Circles currently closed.
+    </p>
+
+
+    <div class="editorial-carousel">
+
+      <div class="editorial-track">
+
+        <div class="editorial-box">
+          <img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/721.jpeg" alt="Delphi Editorial Issue 4">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5">
+        </div>
+
+
+        <!-- Duplicate set for continuous carousel -->
+
+        <div class="editorial-box">
+          <img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/721.jpeg" alt="Delphi Editorial Issue 4">
+        </div>
+
+        <div class="editorial-box">
+          <img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Instagram CTA -->
+
+  <div class="substack-cta">
+
+    <a
+      href="https://www.instagram.com/thedelphi.io/"
+      target="_blank"
+      class="editorial-btn"
+    >
+      In the meantime
+    </a>
+
+  </div>
+
 
   <!-- Footer -->
+
   <div class="footer">
+
     <p class="footer-note">
       We never sell your data. We may use it privately and securely to improve your recommendations and overall experience.
     </p>
+
     Delphi © 2026 — Editorial, engineered.
+
   </div>
 
+
 </body>
+
 </html>
