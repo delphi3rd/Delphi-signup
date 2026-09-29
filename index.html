@@ -693,13 +693,64 @@
       /* Two images remain side-by-side on mobile */
 
       .about-images{
-        grid-template-columns:repeat(2, 1fr);
-        gap:8px;
-      }
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:80px;
+  padding:40px 70px;
+  box-sizing:border-box;
+  background:#fff;
+}
 
-      .about-images .image-box{
-        height:300px;
-      }
+.about-images .image-box{
+  width:100%;
+  box-sizing:border-box;
+
+  /* THICK WHITE FRAME AROUND EACH IMAGE */
+  padding:45px;
+
+  background:#fff;
+  overflow:hidden;
+}
+
+.about-images .image-box img{
+  display:block;
+
+  /* IMAGE IS SMALLER INSIDE ITS WHITE FRAME */
+  width:100%;
+  height:auto;
+
+  object-fit:contain;
+}
+
+
+/* MOBILE */
+
+@media (max-width:800px){
+
+  .about-images{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+
+    /* clear white separation between the two */
+    gap:24px;
+
+    padding:25px 12px;
+  }
+
+  .about-images .image-box{
+    /* thick frame, scaled appropriately for phone */
+    padding:16px;
+  }
+
+  .about-images .image-box img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+
+}
 
 
       /* Services */
