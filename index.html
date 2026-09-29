@@ -14,10 +14,17 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-    /* Base */
 
-    html,body{
+    /* BASE */
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
       margin:0;
+      padding:0;
       background:#fff;
       color:#111;
       font-family:"Cormorant Garamond",serif;
@@ -25,7 +32,7 @@
     }
 
 
-    /* Header */
+    /* HEADER */
 
     header{
       position:sticky;
@@ -44,50 +51,11 @@
       font-weight:400;
       letter-spacing:.5px;
       font-size:40px;
-    }
-
-    .header-right{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      position:relative;
+      line-height:1;
     }
 
 
-    /* Buttons */
-
-    .cta-btn,
-    .login-btn{
-      border:1px solid #111;
-      background:transparent;
-      cursor:pointer;
-      color:#000;
-      font-family:"Cormorant Garamond",serif;
-      text-decoration:none;
-      transition:background .2s,color .2s;
-      white-space:nowrap;
-    }
-
-    .cta-btn:hover,
-    .login-btn:hover{
-      background:#111;
-      color:#fff;
-    }
-
-    .cta-btn{
-      padding:12px 22px;
-      font-size:15px;
-      border-radius:999px;
-    }
-
-    .login-btn{
-      padding:10px 14px;
-      font-size:14px;
-      border-radius:0;
-    }
-
-
-    /* Editorial button */
+    /* BUTTONS */
 
     .editorial-btn{
       display:inline-block;
@@ -100,6 +68,7 @@
       font-size:12px;
       letter-spacing:.18em;
       text-transform:uppercase;
+      text-decoration:none;
       transition:background .2s,color .2s;
     }
 
@@ -114,159 +83,7 @@
     }
 
 
-    /* Login popover */
-
-    .login-pop{
-      position:absolute;
-      right:0;
-      top:calc(100% + 14px);
-      width:320px;
-      padding:16px;
-      border:1px solid #111;
-      background:#fff;
-      box-shadow:0 12px 30px rgba(0,0,0,.12);
-      display:none;
-      z-index:2000;
-      text-align:left;
-    }
-
-    .login-pop.open{
-      display:block;
-    }
-
-    .login-pop h3{
-      margin:0 0 10px;
-      font-family:"Cormorant Garamond",serif;
-      font-weight:700;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-
-    .login-pop p{
-      margin:0 0 12px;
-      font-size:12px;
-      color:#555;
-      line-height:1.4;
-    }
-
-    .login-row{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .login-row input{
-      flex:1;
-      padding:10px 10px;
-      border:1px solid #111;
-      font-size:13px;
-    }
-
-    .login-row button{
-      padding:10px 12px;
-      border:1px solid #111;
-      background:#111;
-      color:#fff;
-      cursor:pointer;
-      font-size:13px;
-      font-family:"Cormorant Garamond",serif;
-    }
-
-    .login-row button:hover{
-      opacity:.9;
-    }
-
-    .login-msg{
-      margin-top:10px;
-      font-size:12px;
-      color:#666;
-      min-height:16px;
-    }
-
-    .login-close{
-      position:absolute;
-      top:10px;
-      right:10px;
-      border:none;
-      background:transparent;
-      cursor:pointer;
-      font-size:16px;
-      line-height:1;
-      color:#111;
-    }
-
-
-    /* Sections */
-
-    .section{
-      text-align:center;
-      padding:28px 20px;
-    }
-
-    .section h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:32px;
-      margin:0 0 10px;
-      font-weight:700;
-    }
-
-    #about{
-      padding:50px 20px 30px;
-    }
-
-    #about h2{
-      font-family:"Cormorant Garamond",serif;
-      font-style:italic;
-      font-weight:400;
-      font-size:42px;
-      letter-spacing:.3px;
-      color:#000000;
-      margin:0;
-      text-align:center;
-    }
-
-    .section-subtitle{
-      font-size:18px;
-      color:#000000;
-      margin:0 0 18px;
-    }
-
-
-    /* Hero */
-
-    .hero-with-bg{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#080808;
-      padding:80px 20px 52px;
-      background:url("images/hands_banner.jpg") center/cover no-repeat;
-    }
-
-    .hero-with-bg h2{
-      font-size:12px;
-      font-family:"Cormorant Garamond",serif;
-      font-weight:400;
-      margin:0 0 12px;
-      color:#d4d3d1;
-    }
-
-    .hero-with-bg p{
-      font-family:"Cormorant Garamond",serif;
-      font-style:italic;
-      font-weight:400;
-      font-size:24px;
-      letter-spacing:.4px;
-      max-width:700px;
-      margin:14px auto 0;
-      text-align:center;
-      color:#000000;
-    }
-
-
-    /* Header Image */
+    /* HEADER IMAGE */
 
     .header-image{
       position:relative;
@@ -276,11 +93,11 @@
     }
 
     .header-image img{
+      display:block;
       width:100%;
       height:100%;
       object-fit:cover;
       object-position:53% center;
-      display:block;
     }
 
     .header-image-title{
@@ -299,16 +116,23 @@
       line-height:1;
       color:#000;
       text-align:center;
+      pointer-events:none;
+    }
+
+    .header-image-title span{
+      display:block;
+      white-space:nowrap;
     }
 
 
-    /* Feature Image + About */
+    /* ABOUT SECTION */
 
     #about-split{
       padding:12px 0 28px;
     }
 
     .split{
+      width:100%;
       max-width:1200px;
       margin:0 auto;
       padding:0 20px;
@@ -319,84 +143,41 @@
     }
 
 
-    /* TWO SIDE-BY-SIDE ABOUT IMAGES */
+    /* ABOUT COPY */
 
-    .about-images{
+    .about-copy{
       width:100%;
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:18px;
+      max-width:1100px;
+      margin:0 auto;
+      padding:70px 30px 90px;
+      text-align:center;
+      font-family:"Cormorant Garamond",serif;
+      color:#111;
     }
 
-    .about-images .image-box{
-      width:100%;
-      height:500px;
-      background:#fff;
-      overflow:hidden;
-      border:none;
-    }
-
-    .about-images .image-box img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
+    .about-copy p{
+      text-align:center;
     }
 
 
-    /* About Copy */
+    /* INTRO */
 
-    .about-images{
-  width:100%;
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:60px;
-  padding:0 30px;
-  box-sizing:border-box;
-}
+    .editorial-intro{
+      width:100%;
+      max-width:900px;
+      margin:0 auto 65px;
+      text-align:center;
+    }
 
-.about-images .image-box{
-  width:100%;
-  min-width:0;
-  height:auto;
-  background:#fff;
-  overflow:hidden;
-  border:none;
-}
-
-.about-images .image-box img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  display:block;
-}
+    .editorial-intro p{
+      margin:0 auto 34px;
+      font-size:26px;
+      line-height:1.55;
+      text-align:center;
+    }
 
 
-/* MOBILE */
-
-@media (max-width:800px){
-
-  .about-images{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:20px;
-    padding:0;
-  }
-
-  .about-images .image-box{
-    height:auto;
-  }
-
-  .about-images .image-box img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-  }
-
-}
-
-
-    /* Services */
+    /* SERVICES */
 
     .services-block{
       width:100%;
@@ -406,11 +187,12 @@
     }
 
     .services-title{
-      margin:0 0 45px !important;
+      margin:0 auto 45px !important;
       font-family:"Cormorant Garamond",serif;
       font-size:27px !important;
       font-weight:400 !important;
       font-style:italic;
+      text-align:center;
     }
 
     .services-row{
@@ -437,91 +219,100 @@
     }
 
 
-    /* Principles */
+    /* MECHANICS */
+
+    .about-copy > h2{
+      width:100%;
+      margin:0 auto 55px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:400;
+      text-align:center;
+    }
 
     .principle{
-      margin:0 auto 48px;
+      width:100%;
       max-width:900px;
+      margin:0 auto 48px;
+      text-align:center;
     }
 
     .principle h3{
-      margin:0 0 5px;
+      margin:0 auto 5px;
       font-family:"Cormorant Garamond",serif;
       font-size:27px;
       line-height:1.2;
       font-weight:400;
+      text-align:center;
     }
 
     .principle p{
-      margin:0;
+      margin:0 auto;
       font-family:"Cormorant Garamond",serif;
       font-size:21px;
       line-height:1.45;
+      text-align:center;
     }
 
     .commissions{
-      margin:65px 0 0;
+      width:100%;
+      margin:65px auto 0;
       font-family:"Cormorant Garamond",serif;
       font-size:20px;
+      text-align:center !important;
     }
 
 
-    /* Beta form */
+    /* TWO STUDIO IMAGES */
 
-    #beta-form{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
-      margin-top:16px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"]{
-      margin:0;
-      padding:14px;
-      border:1px solid #111;
-      font-size:14px;
-      max-width:560px;
+    .about-images{
       width:100%;
-    }
-
-    input::placeholder{
-      font-size:12px;
-      color:#777;
-    }
-
-    #beta-message{
-      font-size:13px;
-      color:#666;
-      margin-top:6px;
-      min-height:18px;
-    }
-
-
-    /* Circle Waitlist */
-
-    #waitlist-form{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:12px;
-      max-width:1000px;
+      max-width:1200px;
       margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:80px;
+      padding:40px 70px;
+      background:#fff;
     }
 
-    #waitlist-form input{
+    .about-images .image-box{
       width:100%;
-      max-width:1000px;
+      min-width:0;
+      padding:45px;
+      background:#fff;
+      overflow:hidden;
     }
 
-    #waitlist-form button{
-      margin-top:8px;
+    .about-images .image-box img{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
     }
 
 
-    /* Editorial Carousel */
+    /* EDITORIAL SECTION */
+
+    .section{
+      text-align:center;
+      padding:28px 20px;
+    }
+
+    .section h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:32px;
+      margin:0 0 10px;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .section-subtitle{
+      font-size:18px;
+      color:#000;
+      margin:0 0 18px;
+      text-align:center;
+    }
 
     #delphi-editorial{
       padding:34px 20px 22px;
@@ -533,6 +324,9 @@
       margin-right:auto;
       line-height:1.55;
     }
+
+
+    /* EDITORIAL CAROUSEL */
 
     .editorial-carousel{
       max-width:1200px;
@@ -570,6 +364,7 @@
     }
 
     @keyframes editorial-scroll{
+
       0%{
         transform:translateX(0);
       }
@@ -577,10 +372,11 @@
       100%{
         transform:translateX(-50%);
       }
+
     }
 
 
-    /* Footer */
+    /* FOOTER */
 
     .footer{
       text-align:center;
@@ -598,169 +394,111 @@
     }
 
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width:800px){
 
+
+      /* HEADER */
+
       header{
-        padding:22px 28px;
+        padding:22px 24px;
       }
 
       header h1{
-        font-size:38px;
-      }
-
-      .login-btn{
-        padding:9px 18px;
-        font-size:16px;
+        font-size:36px;
       }
 
 
-      /* Header Image */
+      /* HERO IMAGE */
 
       .header-image{
-        height:260px;
+        height:300px;
       }
+
+      .header-image img{
+        object-position:center center;
+      }
+
+
+      /* MOBILE HERO TITLE */
 
       .header-image-title{
-        font-size:clamp(48px,13vw,80px);
+        inset:0;
+        padding:0 18px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        /* IMPORTANT:
+           desktop uses a huge horizontal gap.
+           mobile stacks the words instead.
+        */
+
+        gap:6px;
+
+        font-size:clamp(48px,16vw,72px);
         letter-spacing:-1px;
-        gap:40px;
+        line-height:.9;
+        text-align:center;
+      }
+
+      .header-image-title span{
+        display:block;
+        width:100%;
+        white-space:normal;
+        text-align:center;
       }
 
 
-      /* Hero */
-
-      .hero-with-bg{
-        padding:34px 16px 26px;
-        min-height:120px;
-        background-position:center center;
-      }
-
-      .hero-with-bg h2{
-        font-size:12px;
-        line-height:1;
-        white-space:nowrap;
-      }
-
-
-      /* About */
-
-      #about{
-        padding:28px 20px 18px;
-      }
-
-      #about h2{
-        font-size:36px;
-        line-height:1.25;
-      }
+      /* ABOUT */
 
       #about-split{
         padding:6px 0 18px;
       }
 
       .split{
+        width:100%;
         gap:16px;
-        padding:0 20px;
+        padding:0 16px;
       }
 
       .about-copy{
+        width:100%;
         max-width:100%;
-        padding:45px 22px 60px;
-      }
-
-      .about-copy p{
-        font-size:20px;
-        line-height:1.35;
+        margin:0 auto;
+        padding:45px 10px 60px;
+        text-align:center;
       }
 
       .editorial-intro{
-        margin-bottom:50px;
+        width:100%;
+        max-width:100%;
+        margin:0 auto 50px;
+        text-align:center;
       }
 
       .editorial-intro p{
+        margin:0 auto 26px;
         font-size:21px;
         line-height:1.45;
-        margin-bottom:26px;
-      }
-
-      .about-copy h2{
-        font-size:27px;
-        margin-bottom:45px;
+        text-align:center;
       }
 
 
-      /* Two images remain side-by-side on mobile */
-
-      .about-images{
-  width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:80px;
-  padding:40px 70px;
-  box-sizing:border-box;
-  background:#fff;
-}
-
-.about-images .image-box{
-  width:100%;
-  box-sizing:border-box;
-
-  /* THICK WHITE FRAME AROUND EACH IMAGE */
-  padding:45px;
-
-  background:#fff;
-  overflow:hidden;
-}
-
-.about-images .image-box img{
-  display:block;
-
-  /* IMAGE IS SMALLER INSIDE ITS WHITE FRAME */
-  width:100%;
-  height:auto;
-
-  object-fit:contain;
-}
-
-
-/* MOBILE */
-
-@media (max-width:800px){
-
-  .about-images{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-
-    /* clear white separation between the two */
-    gap:24px;
-
-    padding:25px 12px;
-  }
-
-  .about-images .image-box{
-    /* thick frame, scaled appropriately for phone */
-    padding:16px;
-  }
-
-  .about-images .image-box img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-  }
-
-}
-
-
-      /* Services */
+      /* SERVICES MOBILE */
 
       .services-block{
-        margin-bottom:60px;
+        width:100%;
+        margin:0 auto 60px;
+        text-align:center;
       }
 
       .services-title{
-        margin-bottom:28px !important;
+        margin:0 auto 28px !important;
         font-size:25px !important;
       }
 
@@ -771,6 +509,7 @@
       .service-item{
         padding:22px 10px;
         font-size:21px;
+        text-align:center;
       }
 
       .service-item + .service-item{
@@ -779,22 +518,69 @@
       }
 
 
-      /* Principles */
+      /* MECHANICS MOBILE */
+
+      .about-copy > h2{
+        margin:0 auto 45px;
+        font-size:27px;
+        text-align:center;
+      }
 
       .principle{
-        margin-bottom:38px;
+        width:100%;
+        max-width:100%;
+        margin:0 auto 38px;
+        text-align:center;
       }
 
       .principle h3{
+        margin:0 auto 6px;
         font-size:23px;
+        text-align:center;
       }
 
       .principle p{
+        margin:0 auto;
         font-size:18px;
+        line-height:1.4;
+        text-align:center;
+      }
+
+      .commissions{
+        width:100%;
+        margin:55px auto 0;
+        font-size:18px;
+        text-align:center !important;
       }
 
 
-      /* Editorial */
+      /* TWO IMAGES MOBILE */
+
+      .about-images{
+        width:100%;
+        max-width:100%;
+        margin:0 auto;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:24px;
+        padding:25px 0;
+      }
+
+      .about-images .image-box{
+        width:100%;
+        min-width:0;
+        padding:16px;
+        background:#fff;
+      }
+
+      .about-images .image-box img{
+        display:block;
+        width:100%;
+        height:auto;
+        object-fit:contain;
+      }
+
+
+      /* EDITORIAL MOBILE */
 
       #delphi-editorial{
         padding:24px 20px 16px;
@@ -813,6 +599,31 @@
 
     }
 
+
+    /* EXTRA SMALL PHONES */
+
+    @media (max-width:480px){
+
+      .header-image{
+        height:250px;
+      }
+
+      .header-image-title{
+        font-size:clamp(42px,15vw,62px);
+        gap:4px;
+      }
+
+      .about-images{
+        gap:14px;
+        padding:20px 0;
+      }
+
+      .about-images .image-box{
+        padding:10px;
+      }
+
+    }
+
   </style>
 
 </head>
@@ -821,38 +632,52 @@
 <body>
 
 
-  <!-- Header -->
+  <!-- HEADER -->
 
   <header>
+
     <h1>Delphi</h1>
+
   </header>
 
 
-  <!-- Header Image -->
+  <!-- HEADER IMAGE -->
 
   <section class="header-image">
 
-    <img src="images/headerdd.jpg" alt="">
+    <img
+      src="images/headerdd.jpg"
+      alt=""
+    >
 
     <h2 class="header-image-title">
+
       <span>Editorial</span>
+
       <span>Engineered</span>
+
     </h2>
 
   </section>
 
 
-  <!-- Feature Images + About -->
+  <!-- ABOUT + SERVICES + MECHANICS -->
 
-  <section id="about-split" aria-label="Feature images and About Delphi">
+  <section
+    id="about-split"
+    aria-label="Feature images and About Delphi"
+  >
 
     <div class="split">
 
 
-      <!-- ABOUT COPY -->
+      <div
+        class="about-copy"
+        id="editorial"
+      >
 
-      <div class="about-copy" id="editorial">
 
+        <!-- INTRO -->
 
         <div class="editorial-intro">
 
@@ -872,22 +697,35 @@
         <div class="services-block">
 
           <h2 class="services-title">
+
             <em>Services</em>
+
           </h2>
+
 
           <div class="services-row">
 
+
             <div class="service-item">
+
               Bespoke code for any digital dream
+
             </div>
 
+
             <div class="service-item">
+
               The newest tools, in service of your brand's oldest instincts.
+
             </div>
 
+
             <div class="service-item">
+
               Internal systems to elevate your team
+
             </div>
+
 
           </div>
 
@@ -896,12 +734,16 @@
 
         <!-- MECHANICS -->
 
-        <h2>The Mechanics of Modern Editorial</h2>
+        <h2>
+          The Mechanics of Modern Editorial
+        </h2>
 
 
         <div class="principle">
 
-          <h3>Architect Discovery</h3>
+          <h3>
+            Architect Discovery
+          </h3>
 
           <p>
             own how readers encounter the story, recommendation, or product most relevant to them
@@ -912,7 +754,9 @@
 
         <div class="principle">
 
-          <h3>Amplify Authority</h3>
+          <h3>
+            Amplify Authority
+          </h3>
 
           <p>
             scale the loop that converts editorial influence into market purchasing power
@@ -923,7 +767,9 @@
 
         <div class="principle">
 
-          <h3>Endgame over Engagement</h3>
+          <h3>
+            Endgame over Engagement
+          </h3>
 
           <p>
             evolve the reader to make a decision; be a curator, not a content factory
@@ -934,7 +780,9 @@
 
         <div class="principle">
 
-          <h3>Eliminate Silos</h3>
+          <h3>
+            Eliminate Silos
+          </h3>
 
           <p>
             align writers, designers, coders, and marketers with living system data
@@ -945,7 +793,9 @@
 
         <div class="principle">
 
-          <h3>Be a Trusted Source of Truth</h3>
+          <h3>
+            Be a Trusted Source of Truth
+          </h3>
 
           <p>
             train systems to reason from your brand's human corpus
@@ -955,24 +805,40 @@
 
 
         <p class="commissions">
-          <em>Inquires & commissions,</em> hello@thedelphi.io
+
+          <em>Inquires &amp; commissions,</em>
+          hello@thedelphi.io
+
         </p>
 
 
       </div>
 
 
-      <!-- TWO SIDE-BY-SIDE IMAGES -->
+      <!-- TWO STUDIO IMAGES -->
 
       <div class="about-images">
 
-        <div class="image-box">
-          <img src="images/2027_Studio.jpg" alt="Delphi Studio">
-        </div>
 
         <div class="image-box">
-          <img src="images/20272_studio.jpg" alt="Delphi Studio">
+
+          <img
+            src="images/2027_Studio.jpg"
+            alt="Delphi Studio"
+          >
+
         </div>
+
+
+        <div class="image-box">
+
+          <img
+            src="images/20272_studio.jpg"
+            alt="Delphi Studio"
+          >
+
+        </div>
+
 
       </div>
 
@@ -982,67 +848,141 @@
   </section>
 
 
-  <!-- Delphi Editorial -->
+  <!-- DELPHI EDITORIAL -->
 
-  <section class="section" id="delphi-editorial">
+  <section
+    class="section"
+    id="delphi-editorial"
+  >
 
-    <h2>The Oracle Editorial</h2>
+
+    <h2>
+      The Oracle Editorial
+    </h2>
+
 
     <p class="section-subtitle">
+
       Living articles on modern mythology shaping city life.
+
     </p>
 
+
     <p>
+
       Available exclusively to circle I and II members. Circles currently closed.
+
     </p>
 
 
     <div class="editorial-carousel">
 
+
       <div class="editorial-track">
 
-        <div class="editorial-box">
-          <img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1">
-        </div>
 
         <div class="editorial-box">
-          <img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2">
-        </div>
 
-        <div class="editorial-box">
-          <img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3">
-        </div>
+          <img
+            src="images/editorial-01.jpg"
+            alt="Delphi Editorial Issue 1"
+          >
 
-        <div class="editorial-box">
-          <img src="images/721.jpeg" alt="Delphi Editorial Issue 4">
-        </div>
-
-        <div class="editorial-box">
-          <img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5">
         </div>
 
 
-        <!-- Duplicate set for continuous carousel -->
-
         <div class="editorial-box">
-          <img src="images/editorial-01.jpg" alt="Delphi Editorial Issue 1">
+
+          <img
+            src="images/editorial-02.jpg"
+            alt="Delphi Editorial Issue 2"
+          >
+
         </div>
 
-        <div class="editorial-box">
-          <img src="images/editorial-02.jpg" alt="Delphi Editorial Issue 2">
-        </div>
 
         <div class="editorial-box">
-          <img src="images/editorial-03.jpg" alt="Delphi Editorial Issue 3">
+
+          <img
+            src="images/editorial-03.jpg"
+            alt="Delphi Editorial Issue 3"
+          >
+
         </div>
 
-        <div class="editorial-box">
-          <img src="images/721.jpeg" alt="Delphi Editorial Issue 4">
-        </div>
 
         <div class="editorial-box">
-          <img src="images/Devotions to One's Inner Life.jpg" alt="Delphi Editorial Issue 5">
+
+          <img
+            src="images/721.jpeg"
+            alt="Delphi Editorial Issue 4"
+          >
+
         </div>
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/Devotions to One's Inner Life.jpg"
+            alt="Delphi Editorial Issue 5"
+          >
+
+        </div>
+
+
+        <!-- DUPLICATE SET FOR CONTINUOUS CAROUSEL -->
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/editorial-01.jpg"
+            alt="Delphi Editorial Issue 1"
+          >
+
+        </div>
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/editorial-02.jpg"
+            alt="Delphi Editorial Issue 2"
+          >
+
+        </div>
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/editorial-03.jpg"
+            alt="Delphi Editorial Issue 3"
+          >
+
+        </div>
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/721.jpeg"
+            alt="Delphi Editorial Issue 4"
+          >
+
+        </div>
+
+
+        <div class="editorial-box">
+
+          <img
+            src="images/Devotions to One's Inner Life.jpg"
+            alt="Delphi Editorial Issue 5"
+          >
+
+        </div>
+
 
       </div>
 
@@ -1051,27 +991,32 @@
   </section>
 
 
-  <!-- Instagram CTA -->
+  <!-- INSTAGRAM CTA -->
 
   <div class="substack-cta">
 
     <a
       href="https://www.instagram.com/thedelphi.io/"
       target="_blank"
+      rel="noopener noreferrer"
       class="editorial-btn"
     >
+
       In the meantime
+
     </a>
 
   </div>
 
 
-  <!-- Footer -->
+  <!-- FOOTER -->
 
   <div class="footer">
 
     <p class="footer-note">
+
       We never sell your data. We may use it privately and securely to improve your recommendations and overall experience.
+
     </p>
 
     Delphi © 2026 — Editorial, engineered.
